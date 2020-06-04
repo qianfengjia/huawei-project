@@ -1,6 +1,4 @@
-$box_width:200px;
+@charset "utf-8";
 
-body{
-    width: $box_width;
-} 
-  
+/* 引入头部样式 */
+@import "top";
