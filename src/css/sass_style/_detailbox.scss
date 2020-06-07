@@ -1,0 +1,148 @@
+#detail{
+    width: 100%;
+    .detail{
+        width: 1200px;
+        height: 800px;
+        margin: 0 auto;
+        // background: palegoldenrod;
+        .detail_left{
+            width: 450px;
+            height: 540px;
+            // background: palegreen;
+            float: left;
+        }
+        .detail_right{
+            width: 750px;
+            height: 540px;
+            // background: pink;
+            float: left;
+        }
+    }
+}
+
+/*放大镜样式*/
+.topdet_pic{
+    width: 450px;
+    height: 450px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    position: relative;
+    cursor: pointer;
+    .fdj {
+        background: orange;
+        opacity: 0.3;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        visibility: hidden;
+    }
+    .spic{ width: 450px;
+           height: 450px;
+           display: block;
+        }
+}
+
+.botdet_pic{
+    width: 450px;
+    height: 68px;
+    // background: rosybrown;
+    margin-top: 18px;
+    .arrow_left,.arrow_right{
+        width: 30px;
+        height: 68px;
+        cursor: pointer;
+        background-color: seagreen;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        a{
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            border-radius: 14px;
+            border: 1px solid #ccc;
+            i{
+                font-size: 30px;
+                color: #ccc;
+            }
+        }
+    }
+    .arrow_left{float: left;}
+    .arrow_right{float: right;}
+    .pic_middle{
+        width: 390px;
+        height: 68px;
+        background: yellow;
+        float: left;
+    }
+}
+
+.detail_right{
+    .jz{
+        width: 450px;
+        height: 450px;
+        box-sizing: border-box;
+        border: 1px solid black;
+        margin-left: 20px;
+        overflow: hidden;
+        // visibility: hidden;
+        position: relative;
+        .bpic{
+            width: 800px;
+            height: 800px;
+            position: absolute;
+            top: 0;left: 0;
+        }
+    }
+    .bottom_box{
+        width: 300px;
+        height: 68px;
+        margin:18px 0 0 18px;
+        .amount{
+            width: 68px;
+            height: 68px;
+            box-sizing: border-box;
+            border: 1px solid black;
+            float: left;
+            .amount_left{
+                width: 40px;
+                height: 68px;
+                float: left;
+                background: palegoldenrod;
+                input{width: 38px;height: 66px;outline: none;border: 0;text-align: center;}
+            }
+            .amount_right{
+                height: 68px;
+                width: 26px;
+                float: left;
+                span{width: 26px;
+                    height: 32px;
+                    font-size: 20px;
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                }
+                span:nth-of-type(1){
+                    display: block;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    border-bottom: 1px solid black;
+                }
+            }
+        }
+        .join{
+            width: 180px;
+            height: 68px;
+            background: orange;
+            float: right;
+            text-align: center;
+            line-height: 68px;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+}

@@ -314,158 +314,189 @@ img {
   color: #ca141d;
 }
 
-#detail {
+#cart {
   width: 100%;
 }
-#detail .detail {
+#cart .cart {
   width: 1200px;
-  height: 800px;
   margin: 0 auto;
 }
-#detail .detail .detail_left {
-  width: 450px;
-  height: 540px;
-  float: left;
+#cart .cart .topcontent {
+  width: 1160px;
+  height: 60px;
+  background: #ccc;
+  line-height: 60px;
 }
-#detail .detail .detail_right {
-  width: 750px;
-  height: 540px;
-  float: left;
+#cart .cart .bottomcontent {
+  width: 1160px;
+  height: 60px;
+  background: #70eb84;
+  line-height: 60px;
 }
-
-/*放大镜样式*/
-.topdet_pic {
-  width: 450px;
-  height: 450px;
-  box-sizing: border-box;
-  border: 1px solid black;
-  position: relative;
-  cursor: pointer;
-}
-.topdet_pic .fdj {
-  background: orange;
-  opacity: 0.3;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  visibility: hidden;
-}
-.topdet_pic .spic {
-  width: 450px;
-  height: 450px;
-  display: block;
+#cart .cart .middle_part {
+  width: 1200px;
+  height: 600px;
+  margin: 20px 0;
+  background: pink;
 }
 
-.botdet_pic {
-  width: 450px;
-  height: 68px;
-  margin-top: 18px;
+.topcontent {
+  padding: 0 20px;
 }
-.botdet_pic .arrow_left, .botdet_pic .arrow_right {
-  width: 30px;
-  height: 68px;
-  cursor: pointer;
-  background-color: seagreen;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.botdet_pic .arrow_left a, .botdet_pic .arrow_right a {
+.topcontent span {
   display: inline-block;
-  width: 28px;
-  height: 28px;
-  border-radius: 14px;
-  border: 1px solid #ccc;
 }
-.botdet_pic .arrow_left a i, .botdet_pic .arrow_right a i {
-  font-size: 30px;
-  color: #ccc;
+.topcontent span:nth-of-type(1) {
+  width: 80px;
+  height: 60px;
+  margin: 0 20px;
 }
-.botdet_pic .arrow_left {
-  float: left;
+.topcontent span:nth-of-type(2) {
+  width: 80px;
+  height: 60px;
 }
-.botdet_pic .arrow_right {
-  float: right;
+.topcontent span:nth-of-type(3) {
+  width: 80px;
+  height: 60px;
+  margin-left: 420px;
 }
-.botdet_pic .pic_middle {
-  width: 390px;
-  height: 68px;
-  background: yellow;
-  float: left;
+.topcontent span:nth-of-type(4) {
+  width: 80px;
+  height: 60px;
+  margin-left: 60px;
+}
+.topcontent span:nth-of-type(5) {
+  width: 80px;
+  height: 60px;
+  margin-left: 60px;
+}
+.topcontent span:nth-of-type(6) {
+  width: 80px;
+  height: 60px;
+  margin-left: 60px;
 }
 
-.detail_right .jz {
+.bottomcontent {
+  padding: 0 20px;
+}
+.bottomcontent span {
+  display: inline-block;
+}
+.bottomcontent span:nth-of-type(1) {
+  width: 120px;
+  height: 60px;
+  margin: 0 20px;
+  cursor: pointer;
+}
+.bottomcontent span:nth-of-type(2) {
+  width: 120px;
+  height: 60px;
+  margin-left: 610px;
+}
+.bottomcontent span:nth-of-type(2) em {
+  font-style: normal;
+  color: red;
+  padding: 0 5px;
+}
+.bottomcontent span:nth-of-type(3) {
+  width: 120px;
+  height: 60px;
+  margin-left: 100px;
+}
+.bottomcontent span:nth-of-type(3) em {
+  font-style: normal;
+  color: red;
+  padding: 0 5px;
+}
+
+.goods {
+  width: 1180px;
+  height: 140px;
+  background: #f3f3f3;
+  padding-left: 20px;
+  margin-bottom: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.goods .part1 {
+  display: inline-block;
   width: 450px;
-  height: 450px;
-  box-sizing: border-box;
-  border: 1px solid black;
+  height: 120px;
   margin-left: 20px;
-  overflow: hidden;
-  position: relative;
 }
-.detail_right .jz .bpic {
-  width: 800px;
-  height: 800px;
-  position: absolute;
-  top: 0;
-  left: 0;
+.goods .part1 .leftpart {
+  width: 120px;
+  height: 120px;
+  float: left;
 }
-.detail_right .bottom_box {
-  width: 300px;
-  height: 68px;
-  margin: 18px 0 0 18px;
+.goods .part1 .leftpart img {
+  width: 100%;
+  height: 100%;
 }
-.detail_right .bottom_box .amount {
-  width: 68px;
-  height: 68px;
+.goods .part1 .rightpart {
+  width: 330px;
+  height: 120px;
+  float: left;
+}
+.goods .part1 .rightpart p:nth-of-type(1) {
+  padding: 10px 15px;
+  font-size: 14px;
+}
+.goods .part1 .rightpart p:nth-of-type(1) a {
+  color: #666;
+}
+.goods .part1 .rightpart p:nth-of-type(2) b {
+  font-weight: normal;
+  margin-left: 10px;
+  font-size: 14px;
+  color: red;
+  border: 1px solid red;
+  padding: 2px;
+}
+.goods span {
+  width: 90px;
+  height: 60px;
+  margin-left: 145px;
+  text-align: center;
+  line-height: 60px;
+}
+.goods .number {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
   box-sizing: border-box;
   border: 1px solid black;
-  float: left;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
-.detail_right .bottom_box .amount .amount_left {
+.goods .number input {
+  height: 28px;
   width: 40px;
-  height: 68px;
-  float: left;
-  background: palegoldenrod;
-}
-.detail_right .bottom_box .amount .amount_left input {
-  width: 38px;
-  height: 66px;
   outline: none;
   border: 0;
+  background: #f3f3f3;
   text-align: center;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
-.detail_right .bottom_box .amount .amount_right {
-  height: 68px;
-  width: 26px;
-  float: left;
-}
-.detail_right .bottom_box .amount .amount_right span {
-  width: 26px;
-  height: 32px;
-  font-size: 20px;
+.goods .number u {
+  width: 30px;
+  height: 30px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 30px;
   cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
 }
-.detail_right .bottom_box .amount .amount_right span:nth-of-type(1) {
-  display: block;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid black;
+.goods span:nth-of-type(2) {
+  margin-left: 30px;
 }
-.detail_right .bottom_box .join {
-  width: 180px;
-  height: 68px;
-  background: orange;
-  float: right;
-  text-align: center;
-  line-height: 68px;
-  color: #fff;
+.goods span:nth-of-type(3) {
+  margin-left: 60px;
   cursor: pointer;
 }
 
@@ -479,4 +510,4 @@ img {
   height: 200px;
 }
 
-/*# sourceMappingURL=detail.css.map */
+/*# sourceMappingURL=cart.css.map */
