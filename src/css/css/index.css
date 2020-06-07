@@ -315,7 +315,7 @@ img {
   color: #ca141d;
 }
 
-/* 引入banner部分 */
+/* 引入banner部分 头部以下底部以上内容 */
 /*轮播图左侧隐藏菜单公用样式 */
 /*channel-list banner图下方精灵图定位*/
 .nav_main {
@@ -1249,6 +1249,17 @@ img {
   font-weight: 400;
   color: #ca141d;
   text-align: center;
+}
+
+/* 引入底部样式 */
+/*底部样式*/
+#footer {
+  width: 100%;
+  background: #ccc;
+}
+#footer .footer {
+  width: 1200px;
+  height: 200px;
 }
 
 /*# sourceMappingURL=index.css.map */
