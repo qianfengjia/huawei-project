@@ -1,10 +1,3 @@
-/* 
-gulp.task(taskname,callback):创建任务  taskname任务名称  callback执行的回调
-gulp.src(url):设置引入文件的路径
-gulp.dest():输出文件设置(如果不存在目录名，自动生成)
-pipe():管道流(将任务链式连接起来)
-gulp 任务名   -- 执行任务
-*/
 
 const gulp = require('gulp'); //引入gulp，生成一个gulp对象
 const html = require('gulp-minify-html'); //引入html压缩插件  html函数方法
@@ -14,7 +7,7 @@ const sass = require('gulp-sass'); //引入sass编译插件
 //sass
 const sourcemaps = require('gulp-sourcemaps'); //引入生成.map文件模块
 const plugins = require('gulp-load-plugins')(); //生成.map文件 返回的是一个函数体。需要再次执行。
-const script = require('gulp-uglify'); //压缩js的插件
+const uglifyjs = require('gulp-uglify'); //压缩js的插件
 
 
 // //es6转es5的三个模块
@@ -29,20 +22,18 @@ const watch = require('gulp-watch'); //gulp监听
 
 
 
-//1.创建一个简单的gulp任务
-gulp.task('hello', () => {
-    console.log('hello,gulp');
-});
 
-//2.复制文件
-gulp.task('copyfile', () => {
+
+//1.第三方插件
+gulp.task('plugins', () => {
     return gulp.src('src/thirdplugins/*.js')
+        .pipe(uglifyjs())
         .pipe(gulp.dest('dist/thirdplugins'));
 });
-
-gulp.task('copyfile1', () => {
-    return gulp.src('src/fonts/*.woff')
-        .pipe(gulp.dest('dist/fonts'));
+//2. iconfont
+gulp.task('font', () => {
+    return gulp.src('src/font/*')
+        .pipe(gulp.dest('dist/font'));
 });
 
 //3.压缩html文件 - 引入插件包
@@ -52,23 +43,23 @@ gulp.task('uglifyhtml', () => {
         .pipe(gulp.dest('dist/'));
 });
 
-//4.压缩css文件 - 引入插件包
+//4.压缩公共css文件 - 
 gulp.task('uglifycss', () => {
-    return gulp.src('src/css/*.css')
+    return gulp.src('src/css/css/*.css')
         .pipe(css()) //执行css插件包
-        .pipe(gulp.dest('dist/css'));
+        .pipe(gulp.dest('dist/css/css'));
 });
 
 //5.sass编译成css - 引入插件包
-gulp.task('compilesass', () => {
-    return gulp.src('src/css/sass_style/*.scss')
-        .pipe(plugins.sourcemaps.init()) //初始化gulp-sourcemaps插件
-        .pipe(plugins.sass({
-            outputStyle: 'compressed' //压缩
-        }))
-        .pipe(plugins.sourcemaps.write('.')) //通过sourcemaps,生成.map文件
-        .pipe(gulp.dest('dist/css/sass_style/'));
-});
+// gulp.task('compilesass', () => {
+//     return gulp.src('src/sass/*.scss')
+//         .pipe(plugins.sourcemaps.init()) //初始化gulp-sourcemaps插件
+//         .pipe(plugins.sass({
+//             outputStyle: 'compressed' //压缩
+//         }))
+//         .pipe(plugins.sourcemaps.write('.')) //通过sourcemaps,生成.map文件
+//         .pipe(gulp.dest('dist/css/css'));
+// });
 
 
 //6.压缩js文件 - 引入插件包
@@ -77,7 +68,7 @@ gulp.task('uglifyjs', () => {
         .pipe(babel({ //先将es6转换成es5
             presets: ['es2015'] //es2015->es6  es2016->es7...
         }))
-        .pipe(script()) //执行js压缩
+        .pipe(uglifyjs()) //执行js压缩
         .pipe(gulp.dest('dist/script'));
 });
 
@@ -87,18 +78,12 @@ gulp.task('uglifyimg', () => {
         .pipe(imagemin())
         .pipe(gulp.dest('dist/img'))
 });
-
-//8.监听
-// 监听插件-gulp-watch()
-// 参1:监听的目录，数组的形式
-// 参2:通过gulp.parallel()并行监听任务名。
-// 监听的任务必须先执行一次，再能进行监听。
-
-// gulp.task('default', () => {
-//     watch(['src/thirdplugins/*.js', 'src/*.html', 'src/sass/*.scss', 'src/script/*.js', 'src/img/*.{jpg,png,gif}'], gulp.parallel('copyfile', 'uglifyhtml', 'compilesass', 'uglifyjs', 'uglifyimg'));
-// });
-
-
+//8 拷贝公共JS
+gulp.task('libs', () => {
+    return gulp.src('src/libs/*js').pipe(uglifyjs())
+        .pipe(gulp.dest('dist/libs'))
+});
 gulp.task('default', () => {
-    watch(['src/*.html', 'src/sass/*.scss', 'src/script/*.js'], gulp.parallel('uglifyhtml', 'compilesass', 'uglifyjs'));
+    watch(['src/thirdplugins/*.js','src/font/*', 'src/*.html','src/commoncss/*.css','src/sass/*.scss','src/script/*.js','src/img/*.{jpg,png,gif}','src/libs/*js'], 
+    gulp.parallel('plugins', 'font', 'uglifyhtml','uglifycss','compilesass','uglifyjs','uglifyimg','libs'));
 });

@@ -1,23 +1,16 @@
 {
-  "name": "huawei-project",
+  "name": "editHUAWEI",
   "version": "1.0.0",
-  "description": "这是一个华为商城项目",
+  "description": "",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/qianfengjia/huawei-project.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/qianfengjia/huawei-project/issues"
-  },
-  "homepage": "https://github.com/qianfengjia/huawei-project#readme",
   "devDependencies": {
+    "@babel/core": "^7.10.2",
     "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.24.1",
     "gulp": "^4.0.2",

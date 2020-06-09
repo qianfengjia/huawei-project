@@ -71,6 +71,12 @@
                 }
             }
         }
+        .pagebox{
+            width: 1200px;
+            height: 30px;
+            background: palegreen;
+            margin-top: 10px;
+        }
     }
     .choose4{
         div:nth-of-type(2){
@@ -97,17 +103,13 @@
 /*渲染列表部分的样式*/
  .pro-list{
     width: 1200px;
-    // height: 482px;
-    // background: rgb(75, 92, 92);
+    margin-bottom: 50px;
     .part{
         width: 1200px;
         ul{
             zoom: 1;
             overflow: hidden;
             margin-top: 20px;
-            li:hover{ 
-                box-shadow: 0 10px 15px rgba(0,0,0,0.07);
-                transform: translate3d(0px,-2px,0px);}
             li{
                 width: 200px;
                 height: 352px;
@@ -116,63 +118,37 @@
                 background: #fff;
                 float: left; 
                 transition: all .2s linear 0s; 
-                .p-pic{
+                a{
                     width: 200px;
                     height: 180px;
-                    // background: yellow;
+                    display: block;
                     margin-top: 30px;
                     img{width: 180px;
                     height: 180px;margin-left: 10px;}
-                }
-                .p-name{
-                    width: 200px;
-                    height: 20px;
-                    margin-top: 8px;
-                    padding: 6px 0;
-                    // background: yellowgreen;
-                    font-size: 14px;
-                    color: #333;
-                }
-                .p-price{
-                    width: 200px;
-                    height: 24px;
-                    // background: #ccc;
-                    b{color: #ca141d;}
-                    span{width: 60px;
-                        height: 16px;
-                        font-size: 12px;
-                        color: #68beff;
-                        display: inline-block;
-                        border: 1px solid #84c9fd;
-                        margin-left: 6px;
-                        text-align: center;
-                        border-radius: 8px;}
-                }
-                .p-label{
-                    width: 200px;
-                    height: 26px;
-                    // background: plum;
-                    padding:10px 0 10px 0;
-                    span{font-size: 12px;
-                        color: #ca141d;
-                        width: 60px;
-                        height: 16px;
-                        text-align: center;
-                        display: inline-block;
-                        border: 1px solid #d5434a;
+                    p{
+                        width: 200px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        height: 20px;
+                        margin-top: 8px;
+                        padding: 6px 0;
+                        font-size: 14px;
+                        color: #333;
                     }
-                }
-                .p-talk{
-                    em{
-                        font-style: normal;
-                        font-size: 12px;
-                        color: #666;
-                        margin-right: 6px;
+                    span{
+                        width: 200px;
+                        height: 24px;
                     }
                 }
             }
+            li:hover{ 
+                box-shadow: 0 10px 15px rgba(0,0,0,0.07);
+                transform: translate3d(0px,-2px,0px);}
         }
     }
 }
+
+
 
 

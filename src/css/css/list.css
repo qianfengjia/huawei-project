@@ -404,6 +404,12 @@ img {
   margin-left: 40px;
   cursor: pointer;
 }
+#list .list .pagebox {
+  width: 1200px;
+  height: 30px;
+  background: palegreen;
+  margin-top: 10px;
+}
 #list .choose4 div:nth-of-type(2) {
   width: 44px;
   height: 35px;
@@ -428,6 +434,7 @@ img {
 /*渲染列表部分的样式*/
 .pro-list {
   width: 1200px;
+  margin-bottom: 50px;
 }
 .pro-list .part {
   width: 1200px;
@@ -436,10 +443,6 @@ img {
   zoom: 1;
   overflow: hidden;
   margin-top: 20px;
-}
-.pro-list .part ul li:hover {
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.07);
-  transform: translate3d(0px, -2px, 0px);
 }
 .pro-list .part ul li {
   width: 200px;
@@ -450,61 +453,35 @@ img {
   float: left;
   transition: all .2s linear 0s;
 }
-.pro-list .part ul li .p-pic {
+.pro-list .part ul li a {
   width: 200px;
   height: 180px;
+  display: block;
   margin-top: 30px;
 }
-.pro-list .part ul li .p-pic img {
+.pro-list .part ul li a img {
   width: 180px;
   height: 180px;
   margin-left: 10px;
 }
-.pro-list .part ul li .p-name {
+.pro-list .part ul li a p {
   width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   height: 20px;
   margin-top: 8px;
   padding: 6px 0;
   font-size: 14px;
   color: #333;
 }
-.pro-list .part ul li .p-price {
+.pro-list .part ul li a span {
   width: 200px;
   height: 24px;
 }
-.pro-list .part ul li .p-price b {
-  color: #ca141d;
-}
-.pro-list .part ul li .p-price span {
-  width: 60px;
-  height: 16px;
-  font-size: 12px;
-  color: #68beff;
-  display: inline-block;
-  border: 1px solid #84c9fd;
-  margin-left: 6px;
-  text-align: center;
-  border-radius: 8px;
-}
-.pro-list .part ul li .p-label {
-  width: 200px;
-  height: 26px;
-  padding: 10px 0 10px 0;
-}
-.pro-list .part ul li .p-label span {
-  font-size: 12px;
-  color: #ca141d;
-  width: 60px;
-  height: 16px;
-  text-align: center;
-  display: inline-block;
-  border: 1px solid #d5434a;
-}
-.pro-list .part ul li .p-talk em {
-  font-style: normal;
-  font-size: 12px;
-  color: #666;
-  margin-right: 6px;
+.pro-list .part ul li:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.07);
+  transform: translate3d(0px, -2px, 0px);
 }
 
 /*底部样式*/

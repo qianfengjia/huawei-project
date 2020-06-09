@@ -318,33 +318,38 @@ img {
 /* 引入banner部分 头部以下底部以上内容 */
 /*轮播图左侧隐藏菜单公用样式 */
 /*channel-list banner图下方精灵图定位*/
-.nav_main {
+/*轮播图样式*/
+#nav_main {
   height: 520px;
   position: relative;
 }
-
-/*轮播图样式*/
-.banner {
+#nav_main .banner {
   width: 100%;
   height: 520px;
   overflow: hidden;
   border-radius: 0 0 90px 90px;
   position: absolute;
 }
-.banner .pictu_box {
+#nav_main .banner .pictu_box {
   width: 100%;
 }
-.banner .pictu_box li > img {
+#nav_main .banner .pictu_box li {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#nav_main .banner .pictu_box li img {
   height: 520px;
 }
-.banner .btn_box {
+#nav_main .banner .btn_box {
   width: 140px;
   height: 20px;
   position: absolute;
   bottom: 54px;
   right: 64px;
 }
-.banner .btn_box > li {
+#nav_main .banner .btn_box li {
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -352,13 +357,20 @@ img {
   float: left;
   margin: 2px;
 }
-.banner .btn_box li.active {
-  background-color: #bd5757;
+#nav_main .banner .btn_box li.active {
+  background-color: #fff;
 }
-.banner .spanleft {
-  left: 50%;
+#nav_main .banner .arrow {
   position: absolute;
   font-size: 60px;
+  top: 35%;
+  color: #fff;
+}
+#nav_main .banner .spanleft {
+  left: 300px;
+}
+#nav_main .banner .spanright {
+  right: 134px;
 }
 
 /* 导航nav*/
@@ -366,7 +378,6 @@ img {
   width: 200px;
   position: absolute;
   top: 18px;
-  left: 0;
 }
 .nav .nav_li {
   position: relative;
@@ -552,7 +563,6 @@ img {
   box-shadow: 0 2px 26px rgba(0, 0, 0, 0.07);
   position: absolute;
   bottom: -50px;
-  left: 0;
 }
 .channel-list .smallchannel {
   width: 1200px;
@@ -789,6 +799,7 @@ img {
 }
 
 /*轮播图以下标题公共样式*/
+/*这是渲染图片的公共结构*/
 /*热销单品salebox*/
 .salebox {
   width: 1200px;
@@ -805,25 +816,69 @@ img {
 .salebox .salepic {
   width: 100%;
   height: 604px;
-  background: #ccc;
 }
 .salebox .salepic .salepic_lf {
   width: 232px;
   height: 604px;
   float: left;
 }
+.salebox .salepic .salepic_lf img {
+  border-radius: 10px;
+}
 .salebox .salepic .salepic_rt {
   width: 968px;
   height: 604px;
-  background: #999;
   float: left;
 }
 .salebox .salepic .salepic_rt .salepic_ul li {
   width: 230px;
   height: 290px;
-  background: pink;
+  border-radius: 10px;
+  background: #f9f9f9;
   margin: 0 0 12px 12px;
   float: left;
+}
+.salebox .salepic .salepic_rt .salepic_ul li a .phone01 {
+  width: 230px;
+  height: 150px;
+  margin-top: 35px;
+}
+.salebox .salepic .salepic_rt .salepic_ul li a .phone01 img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin-left: 40px;
+}
+.salebox .salepic .salepic_rt .salepic_ul li a p:nth-of-type(1) {
+  width: 210px;
+  height: 21px;
+  margin: 12px 10px 0 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #3a3a3a;
+  text-align: center;
+}
+.salebox .salepic .salepic_rt .salepic_ul li a p:nth-of-type(2) {
+  width: 170px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: 18px;
+  padding: 0 10px;
+  margin: 2px 20px 0 20px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #777;
+  text-align: center;
+}
+.salebox .salepic .salepic_rt .salepic_ul li a p:nth-of-type(3) {
+  width: 190px;
+  height: 21px;
+  margin: 0 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #ca141d;
+  text-align: center;
 }
 
 /*精品推荐 recommendgoods*/
@@ -831,7 +886,6 @@ img {
   width: 1200px;
   margin: auto;
   position: relative;
-  background-color: #fde4b3;
 }
 .recommendgoods .title h2 {
   height: 26px;
@@ -853,23 +907,24 @@ img {
 .recommendgoods .recommend_list ul li {
   width: 230px;
   height: 295px;
-  background: palegoldenrod;
 }
 .recommendgoods .recommend_list ul li .recommend_box {
   width: 230px;
   height: 205px;
   border-radius: 10px;
-  background: powderblue;
+  border: 1px solid #dfdfdf;
   padding-top: 36px;
 }
 .recommendgoods .recommend_list ul li .recommend_box p:nth-of-type(1) {
   width: 150px;
   height: 150px;
-  background: sandybrown;
   margin: 0 40px 19px 40px;
 }
 .recommendgoods .recommend_list ul li .recommend_box p:nth-of-type(2) {
   width: 210px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   height: 36px;
   border-radius: 0 0 10px 10px;
   background: #f3f3f5;
@@ -881,12 +936,14 @@ img {
 }
 .recommendgoods .recommend_list ul li p:nth-of-type(1) {
   width: 230px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   height: 24px;
   line-height: 24px;
   text-align: center;
   font-size: 14px;
   font-weight: 400;
-  background: #cc8686;
 }
 .recommendgoods .recommend_list ul li p:nth-of-type(2) {
   width: 230px;
@@ -917,7 +974,6 @@ img {
 #smallbanner {
   width: 1200px;
   height: 160px;
-  background: pink;
   margin: 0 auto;
 }
 #smallbanner .smallbanner {
@@ -927,8 +983,8 @@ img {
 }
 #smallbanner .smallbanner ol {
   position: absolute;
-  right: 0;
-  top: 80%;
+  right: 10px;
+  top: 76%;
 }
 #smallbanner .smallbanner ol li {
   width: 10px;
@@ -937,6 +993,19 @@ img {
   border: 1px solid #fff;
   float: left;
   margin: 3px;
+  cursor: pointer;
+}
+#smallbanner .smallbanner ol li.active {
+  background: #fff;
+}
+#smallbanner .smallbanner ul li {
+  position: absolute;
+  top: 26px;
+  left: 0;
+  opacity: 0;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 /*渲染部分的大标题公共样式 ，例如手机，智能家居那块*/
@@ -996,19 +1065,18 @@ img {
   color: #ca141d;
 }
 #phonebox .phonebox .phonelist ul {
-  background: darkorange;
   overflow: hidden;
   zoom: 1;
 }
 #phonebox .phonebox .phonelist ul li {
   width: 230px;
   height: 290px;
-  background: #cc8686;
+  border-radius: 10px;
+  background: #f9f9f9;
   float: left;
   margin: 0 10px 10px 0;
 }
 
-/*这是渲染图片的公共结构 tongy*/
 /*手机phone渲染样式*/
 .phonelist > ul > li > a {
   width: 230px;
@@ -1037,6 +1105,9 @@ img {
 }
 .phonelist > ul > li > a p:nth-of-type(2) {
   width: 170px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   height: 18px;
   padding: 0 10px;
   margin: 2px 20px 0 20px;
@@ -1062,7 +1133,6 @@ img {
 #smarthome .smarthome {
   width: 1200px;
   margin: 0 auto;
-  background: #bfbfee;
   /*渲染样式*/
 }
 #smarthome .smarthome .sametitle {
@@ -1113,21 +1183,19 @@ img {
 }
 #smarthome .smarthome .smarttop ul {
   width: 1200px;
-  background: cyan;
   overflow: hidden;
   zoom: 1;
 }
 #smarthome .smarthome .smarttop ul .normalpic {
   width: 230px;
   height: 290px;
-  background: #cc8686;
+  background: #f9f9f9;
   float: left;
   margin: 0 10px 10px 0;
 }
 #smarthome .smarthome .smarttop ul .bigpic {
   width: 470px;
   height: 290px;
-  background: orange;
   float: left;
   margin: 0 10px 10px 0;
 }
@@ -1146,23 +1214,24 @@ img {
 #smarthome .smarthome .smartbottom .recommend_list ul li {
   width: 230px;
   height: 295px;
-  background: palegoldenrod;
 }
 #smarthome .smarthome .smartbottom .recommend_list ul li .recommend_box {
   width: 230px;
   height: 205px;
   border-radius: 10px;
-  background: powderblue;
+  border: 1px solid #dfdfdf;
   padding-top: 36px;
 }
 #smarthome .smarthome .smartbottom .recommend_list ul li .recommend_box p:nth-of-type(1) {
   width: 150px;
   height: 150px;
-  background: sandybrown;
   margin: 0 40px 19px 40px;
 }
 #smarthome .smarthome .smartbottom .recommend_list ul li .recommend_box p:nth-of-type(2) {
   width: 210px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   height: 36px;
   border-radius: 0 0 10px 10px;
   background: #f3f3f5;
@@ -1174,12 +1243,14 @@ img {
 }
 #smarthome .smarthome .smartbottom .recommend_list ul li p:nth-of-type(1) {
   width: 230px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   height: 24px;
   line-height: 24px;
   text-align: center;
   font-size: 14px;
   font-weight: 400;
-  background: #cc8686;
 }
 #smarthome .smarthome .smartbottom .recommend_list ul li p:nth-of-type(2) {
   width: 230px;
@@ -1233,6 +1304,9 @@ img {
 }
 .smarttop > ul > .normalpic > a p:nth-of-type(2) {
   width: 170px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   height: 18px;
   padding: 0 10px;
   margin: 2px 20px 0 20px;

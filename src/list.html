@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>listpart</title>
+    <title>列表页</title>
     <link rel="stylesheet" href="./css/iconfont/iconfont.css">
     <link rel="stylesheet" href="./css/css/list.css">
+    <link rel="stylesheet" href="./css/css/pagination.css">
 </head>
 <body>
      <!-- 头部公共结构 -->
@@ -195,62 +196,12 @@
             <!-- 渲染列表部分的结构 -->
             <div class="pro-list">
                 <div class="part">
-                    <ul>
-                        <li><a href="javascript:;">
-                            <p class="p-pic"><img src="https://res.vmallres.com/pimages//product/6901443398034/428_428_C5DDCBF2DE021D5766A395C5167B8466B497D74394A0181Fmp.png" alt=""></p>
-                            <p class="p-name">HUAWEI P40 Pro+</p>
-                            <p class="p-price"><b>¥8888</b><span>多款可选</span></p>
-                            <p class="p-label"><span>赠送积分</span></p>
-                            <p class="p-talk">
-                                <em><span>1</span>人评价</em><em><span>100</span>%好评</em>
-                            </p>
-                        </a></li>
-                        <li><a href="javascript:;">
-                            <p class="p-pic"><img src="https://res.vmallres.com/pimages//product/6901443398034/428_428_C5DDCBF2DE021D5766A395C5167B8466B497D74394A0181Fmp.png" alt=""></p>
-                            <p class="p-name">HUAWEI P40 Pro+</p>
-                            <p class="p-price"><b>¥8888</b><span>多款可选</span></p>
-                            <p class="p-label"><span>赠送积分</span></p>
-                            <p class="p-talk">
-                                <em><span>1</span>人评价</em><em><span>100</span>%好评</em>
-                            </p>
-                        </a></li>
-                        <li><a href="javascript:;">
-                            <p class="p-pic"><img src="https://res.vmallres.com/pimages//product/6901443398034/428_428_C5DDCBF2DE021D5766A395C5167B8466B497D74394A0181Fmp.png" alt=""></p>
-                            <p class="p-name">HUAWEI P40 Pro+</p>
-                            <p class="p-price"><b>¥8888</b><span>多款可选</span></p>
-                            <p class="p-label"><span>赠送积分</span></p>
-                            <p class="p-talk">
-                                <em><span>1</span>人评价</em><em><span>100</span>%好评</em>
-                            </p>
-                        </a></li>
-                        <li><a href="javascript:;">
-                            <p class="p-pic"><img src="https://res.vmallres.com/pimages//product/6901443398034/428_428_C5DDCBF2DE021D5766A395C5167B8466B497D74394A0181Fmp.png" alt=""></p>
-                            <p class="p-name">HUAWEI P40 Pro+</p>
-                            <p class="p-price"><b>¥8888</b><span>多款可选</span></p>
-                            <p class="p-label"><span>赠送积分</span></p>
-                            <p class="p-talk">
-                                <em><span>1</span>人评价</em><em><span>100</span>%好评</em>
-                            </p>
-                        </a></li>
-                        <li><a href="javascript:;">
-                            <p class="p-pic"><img src="https://res.vmallres.com/pimages//product/6901443398034/428_428_C5DDCBF2DE021D5766A395C5167B8466B497D74394A0181Fmp.png" alt=""></p>
-                            <p class="p-name">HUAWEI P40 Pro+</p>
-                            <p class="p-price"><b>¥8888</b><span>多款可选</span></p>
-                            <p class="p-label"><span>赠送积分</span></p>
-                            <p class="p-talk">
-                                <em><span>1</span>人评价</em><em><span>100</span>%好评</em>
-                            </p>
-                        </a></li>
-                        <li><a href="javascript:;">
-                            <p class="p-pic"><img src="https://res.vmallres.com/pimages//product/6901443398034/428_428_C5DDCBF2DE021D5766A395C5167B8466B497D74394A0181Fmp.png" alt=""></p>
-                            <p class="p-name">HUAWEI P40 Pro+</p>
-                            <p class="p-price"><b>¥8888</b><span>多款可选</span></p>
-                            <p class="p-label"><span>赠送积分</span></p>
-                            <p class="p-talk">
-                                <em><span>1</span>人评价</em><em><span>100</span>%好评</em>
-                            </p>
-                        </a></li>
-                    </ul>
+                 <!-- 渲染内容部分 -->
+                </div>
+            </div>
+            <!-- 分页结构 -->
+            <div class="pagelist">
+                <div class="m-style page">
                 </div>
             </div>
         </div>
@@ -258,10 +209,14 @@
 
 
     <!-- 底部footer -->
-    <div id="footer">
+    <!-- <div id="footer">
         <div class="footer">
             
         </div>
-    </div>
+    </div> -->
 </body>
 </html>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script src="thirdplugins/jquery.lazyload.js"></script>
+<script src="./thirdplugins/jquery.pagination.js"></script>
+<script src="./script/list.js"></script>
