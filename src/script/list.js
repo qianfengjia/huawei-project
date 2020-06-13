@@ -104,14 +104,14 @@
 
     //3.排序
     //默认排序-重置
-    $('button').eq(0).on('click', function() {
+    $('.button').on('click', function() {
         $.each(array_default, function(index, value) {
             $('.part ul').append(value);
         });
         return;
     });-
     //价格升序
-    $('button').eq(1).on('click', function() {
+    $('.icon-iconfontyoujiantou').on('click', function() {
         for (let i = 0; i < array.length - 1; i++) {
             for (let j = 0; j < array.length - i - 1; j++) {
                 prev = parseFloat(array[j].find('.price').html().substring(1));
@@ -136,7 +136,8 @@
         });
     });
     //价格降序
-    $('button').eq(2).on('click', function() {
+    // $('button').eq(2).on('click', function() {
+    $('.icon-bottom-arrow').on('click', function() {
         for (let i = 0; i < array.length - 1; i++) {
             for (let j = 0; j < array.length - i - 1; j++) {
                 prev = parseFloat(array[j].find('.price').html().substring(1));

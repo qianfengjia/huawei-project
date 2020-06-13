@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cart</title>
+    <title>结算页面</title>
     <link rel="stylesheet" href="./css/iconfont/iconfont.css">
     <link rel="stylesheet" href="./css/css/cart.css">
 </head>
 
 <body>
+    <!-- <header></header> -->
     <!-- 头部公共结构 -->
     <div id="top">
         <div class="top_content">
@@ -34,7 +35,7 @@
             </div>
             <div class="right_content">
                 <ul class="bigul">
-                    <li class="bigul_li"><a href="javascript:;">请登录</a>&nbsp;<a href="javascript:;">注册</a></li>
+                    <li class="bigul_li"><a href="./login.html">请登录</a>&nbsp;<a href="./registry.html">注册</a></li>
                     <li class="bigul_li"><a href="javascript:;">我的订单</a></li>
                     <li class="bigul_li dropmenu"><span>客户服务</span><span class="iconfont icon-bottom-arrow"></span>
                         <dl class="hid_box2">
@@ -170,29 +171,28 @@
             
             <!-- 中间 -->
             <div class="middle_part">
-                <div class="goods">
-                    <input type="checkbox" checked="" value="">
+                <div class="goods" style="display: none;">
+                    <input class="inputchoose" type="checkbox" checked="" value="">
                     <div class="part1">
-                        <div class="leftpart"><a href="javascript:;"><img src="https://res.vmallres.com/pimages//product/6901443381517/428_428_0410C56E4DFF825A527CBD3369F4D394F1699311CF51F864mp.png" alt=""></a></div>
+                        <div class="leftpart"><a href="javascript:;"><img src="" alt=""></a></div>
                         <div class="rightpart">
                             <p><a href="">HUAWEI P40 Pro 5G 全网通 8GB+128GB（零度白）
                                 零度白 5G全网通 8GB+128GB 官方标配</a></p>
                             <p><b>分期免息</b><b>积分双倍抵现</b></p>
                         </div>
                     </div>
-                    <span>$ <em>188</em></span>
+                    <span class="p-price">$ <em>188</em></span>
                    <div class="number">
-                       <u>-</u><input type="text" value="1"><u>+</u>
+                       <u class="number_down">-</u><input type="text" value="1"><u class="number_add">+</u>
                    </div>
-                   <span>$ <em>188</em></span>
-                   <span>删除</span>
+                   <span class="l_price">$ <em>188</em></span>
+                   <span class="delate_one">删除</span>
                 </div>
-                <div class="goods"></div>
             </div>
 
             <!-- 底部 -->
             <div class="bottomcontent">
-                <input type="checkbox" checked="" value=""><span>删除选中的商品</span><span>已选择<em>1</em>件商品</span><span>总价:<em>788</em>元</span>
+               <span>删除选中的商品</span> <input type="button" checked="" value="删除"><span class="total_goods">已选择<em class="hadchose">0</em>件商品</span><span class="total_price">总价:<em>788</em>元</span>
             </div>
         </div>
     </div>
@@ -206,5 +206,7 @@
         </div>
     </div>
 </body>
-
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="./thirdplugins/jquery.cookie.js"></script>
+<script src="./script/cart.js"></script>
 </html>

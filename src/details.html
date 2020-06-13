@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>detail</title>
+    <title>详情页</title>
     <link rel="stylesheet" href="./css/iconfont/iconfont.css">
     <link rel="stylesheet" href="./css/css/detail.css">
 </head>
@@ -32,7 +32,7 @@
             </div>
             <div class="right_content">
                 <ul class="bigul">
-                    <li class="bigul_li"><a href="javascript:;">请登录</a>&nbsp;<a href="javascript:;">注册</a></li>
+                    <li class="bigul_li"><a href="./login.html">请登录</a>&nbsp;<a href="./registry.html">注册</a></li>
                     <li class="bigul_li"><a href="javascript:;">我的订单</a></li>
                     <li class="bigul_li dropmenu"><span>客户服务</span><span class="iconfont icon-bottom-arrow"></span>
                         <dl class="hid_box2">
@@ -162,30 +162,30 @@
             <div class="detail_left">
                 <div class="topdet_pic">
                     <!-- 小放大镜里的图片 -->
-                    <img class="spic" src="https://res.vmallres.com/pimages//product/6901443381517/group//800_800_22CAF23AA6BD8E6117D36D479FCEFCF061371FCF2AC8C174.png" alt="">
+                    <img class="spic" src="" alt="">
                     <!-- 放大镜 -->
                     <div class="fdj"></div>
                 </div>
                 <div class="botdet_pic">
-                    <div class="arrow_left"><a href="javascript:;"><i class="iconfont icon-zuoyoujiantou"></i></a></div>
-                    <div class="pic_middle"></div>
-                    <div class="arrow_right"><a href="javascript:;"><i class="iconfont icon-zuoyoujiantou1"></i></a></div>
+                    <a class="leftarrow" href="javascript:;">&lt;</a>
+                        <ul class="smallpic"></ul>
+                    <a class="rightarrow" href="javascript:;">&gt;</a>
                 </div>
             </div>
             <div class="detail_right">
                 <!-- 镜子 -->
                 <div class="jz">
                     <!-- 镜子里的图片 -->
-                    <img src="https://res.vmallres.com/pimages//product/6901443381517/group//800_800_22CAF23AA6BD8E6117D36D479FCEFCF061371FCF2AC8C174.png" alt="" class="bpic">
+                    <img class="bpic" src="" alt="">
                 </div>
                 <div class="bottom_box">
                     <div class="amount">
-                        <div class="amount_left"><input type="text" name="" id="" value="1"></div>
+                        <div class="amount_left"><input type="text" name="" id="count" value="1"></div>
                         <div class="amount_right">
                             <span>+</span><span>-</span>
                         </div>
                     </div>
-                    <div class="join">加入购物车</div>
+                    <div class="join">加入购物车</div><a href="./cart.html"><div class="join_in">进入购物车</div></a>
                 </div>
             </div>
         </div>
@@ -200,3 +200,6 @@
     </div>
 </body>
 </html>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script src="./thirdplugins/jquery.cookie.js"></script>
+<script src="./script/detail.js"></script>

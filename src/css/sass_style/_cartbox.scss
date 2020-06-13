@@ -17,9 +17,7 @@
         }
         .middle_part{
             width: 1200px;
-            height: 600px;
             margin: 20px 0;
-            background: pink;
         }
     }
 }
@@ -46,17 +44,17 @@
     span:nth-of-type(4){
         width: 80px;
         height: 60px;
-        margin-left: 60px;
+        margin-left: 86px;
     }
     span:nth-of-type(5){
         width: 80px;
         height: 60px;
-        margin-left: 60px;
+        margin-left: 36px;
     }
     span:nth-of-type(6){
         width: 80px;
         height: 60px;
-        margin-left: 60px;
+        margin-left: 80px;
     }
 }
 
@@ -70,9 +68,9 @@
         cursor: pointer;
     }
     span:nth-of-type(2){
-        width: 120px;
+        width: 140px;
         height: 60px;
-        margin-left: 610px;
+        margin-left: 510px;
         em{font-style: normal;color: red;padding: 0 5px;}
     }
     span:nth-of-type(3){
@@ -94,11 +92,15 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    .inputchoose{
+        float: left;
+        margin-top: 60px;
+    }
     .part1{
-        display: inline-block;
+        float: left;
         width: 450px;
         height: 120px;
-        margin-left: 20px;
+        margin: 10px 0 0 20px;
         .leftpart{
             width: 120px;
             height: 120px;
@@ -130,19 +132,21 @@
         }
     }
     span{
+        float: left;
         width: 90px;
         height: 60px;
-        margin-left: 145px;
+        margin: 40px 0 0 145px;
         text-align: center;
         line-height: 60px;
     }
     .number{
-        display: inline-block;
+        float: left;
         width: 100px;
         height: 30px;
         box-sizing: border-box;
         border: 1px solid black;
-        margin-left: 50px;
+        // margin-left: 50px;
+        margin: 50px 0 0 50px;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;

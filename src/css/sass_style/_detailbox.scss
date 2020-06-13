@@ -4,89 +4,88 @@
         width: 1200px;
         height: 800px;
         margin: 0 auto;
-        // background: palegoldenrod;
+        position: relative;
         .detail_left{
             width: 450px;
             height: 540px;
-            // background: palegreen;
-            float: left;
+            float: left;       
         }
         .detail_right{
             width: 750px;
             height: 540px;
-            // background: pink;
             float: left;
         }
     }
 }
 
-/*放大镜样式*/
-.topdet_pic{
-    width: 450px;
-    height: 450px;
-    box-sizing: border-box;
-    border: 1px solid black;
-    position: relative;
-    cursor: pointer;
-    .fdj {
-        background: orange;
-        opacity: 0.3;
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        visibility: hidden;
-    }
-    .spic{ width: 450px;
-           height: 450px;
-           display: block;
+//左边
+.detail_left{
+    /*放大镜样式*/
+    .topdet_pic{
+        width: 450px;
+        height: 450px;
+        box-sizing: border-box;
+        border: 1px solid black;
+        .fdj {
+            background: orange;
+            opacity: 0.4;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            visibility: hidden;
+            z-index: 999;
+            cursor: move;
         }
-}
-
-.botdet_pic{
-    width: 450px;
-    height: 68px;
-    // background: rosybrown;
-    margin-top: 18px;
-    .arrow_left,.arrow_right{
-        width: 30px;
+        .spic{ width: 450px;
+            height: 450px;
+            display: block;
+            }
+    }
+    .botdet_pic{
         height: 68px;
-        cursor: pointer;
-        background-color: seagreen;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        background: rosybrown;
+        position: relative;
+        overflow: hidden;
+        margin-top: 20px;
         a{
-            display: inline-block;
-            width: 28px;
-            height: 28px;
-            border-radius: 14px;
-            border: 1px solid #ccc;
-            i{
-                font-size: 30px;
-                color: #ccc;
+            font-size: 20px;
+            color: red;
+            cursor: pointer;
+            float: left;
+            position: absolute;
+            top:30%;
+        }
+        .leftarrow{left: 10px;}
+        .rightarrow{right: 10px;}
+        ul{
+            float: left;
+            position: absolute;
+            width: 400px;
+            height: 68px;
+            top: 0;left:30px;
+            li{
+                width: 70px;
+                height: 68px;
+                margin-right: 10px;
+                background: palegreen;
+                float: left;
             }
         }
     }
-    .arrow_left{float: left;}
-    .arrow_right{float: right;}
-    .pic_middle{
-        width: 390px;
-        height: 68px;
-        background: yellow;
-        float: left;
-    }
 }
 
+
+// 右边
 .detail_right{
     .jz{
+        position: absolute;
         width: 450px;
         height: 450px;
         box-sizing: border-box;
         border: 1px solid black;
         margin-left: 20px;
         overflow: hidden;
-        // visibility: hidden;
-        position: relative;
+        visibility: hidden;
         .bpic{
             width: 800px;
             height: 800px;
@@ -95,7 +94,9 @@
         }
     }
     .bottom_box{
-        width: 300px;
+        position: absolute;
+        top: 450px;left: 500px;
+        width: 400px;
         height: 68px;
         margin:18px 0 0 18px;
         .amount{
@@ -135,10 +136,21 @@
             }
         }
         .join{
-            width: 180px;
+            width: 120px;
             height: 68px;
             background: orange;
-            float: right;
+            margin-left: 20px;
+            float: left;
+            text-align: center;
+            line-height: 68px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .join_in{
+            width: 120px;
+            height: 68px;
+            background: rgb(255, 60, 0);
+            float: left;
             text-align: center;
             line-height: 68px;
             color: #fff;

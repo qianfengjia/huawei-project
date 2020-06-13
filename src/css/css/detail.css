@@ -321,6 +321,7 @@ img {
   width: 1200px;
   height: 800px;
   margin: 0 auto;
+  position: relative;
 }
 #detail .detail .detail_left {
   width: 450px;
@@ -333,75 +334,76 @@ img {
   float: left;
 }
 
-/*放大镜样式*/
-.topdet_pic {
+.detail_left {
+  /*放大镜样式*/
+}
+.detail_left .topdet_pic {
   width: 450px;
   height: 450px;
   box-sizing: border-box;
   border: 1px solid black;
-  position: relative;
-  cursor: pointer;
 }
-.topdet_pic .fdj {
+.detail_left .topdet_pic .fdj {
   background: orange;
-  opacity: 0.3;
+  opacity: 0.4;
   position: absolute;
   left: 0px;
   top: 0px;
   visibility: hidden;
+  z-index: 999;
+  cursor: move;
 }
-.topdet_pic .spic {
+.detail_left .topdet_pic .spic {
   width: 450px;
   height: 450px;
   display: block;
 }
-
-.botdet_pic {
-  width: 450px;
+.detail_left .botdet_pic {
   height: 68px;
-  margin-top: 18px;
+  background: rosybrown;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
 }
-.botdet_pic .arrow_left, .botdet_pic .arrow_right {
-  width: 30px;
-  height: 68px;
+.detail_left .botdet_pic a {
+  font-size: 20px;
+  color: red;
   cursor: pointer;
-  background-color: seagreen;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.botdet_pic .arrow_left a, .botdet_pic .arrow_right a {
-  display: inline-block;
-  width: 28px;
-  height: 28px;
-  border-radius: 14px;
-  border: 1px solid #ccc;
-}
-.botdet_pic .arrow_left a i, .botdet_pic .arrow_right a i {
-  font-size: 30px;
-  color: #ccc;
-}
-.botdet_pic .arrow_left {
   float: left;
+  position: absolute;
+  top: 30%;
 }
-.botdet_pic .arrow_right {
-  float: right;
+.detail_left .botdet_pic .leftarrow {
+  left: 10px;
 }
-.botdet_pic .pic_middle {
-  width: 390px;
+.detail_left .botdet_pic .rightarrow {
+  right: 10px;
+}
+.detail_left .botdet_pic ul {
+  float: left;
+  position: absolute;
+  width: 400px;
   height: 68px;
-  background: yellow;
+  top: 0;
+  left: 30px;
+}
+.detail_left .botdet_pic ul li {
+  width: 70px;
+  height: 68px;
+  margin-right: 10px;
+  background: palegreen;
   float: left;
 }
 
 .detail_right .jz {
+  position: absolute;
   width: 450px;
   height: 450px;
   box-sizing: border-box;
   border: 1px solid black;
   margin-left: 20px;
   overflow: hidden;
-  position: relative;
+  visibility: hidden;
 }
 .detail_right .jz .bpic {
   width: 800px;
@@ -411,7 +413,10 @@ img {
   left: 0;
 }
 .detail_right .bottom_box {
-  width: 300px;
+  position: absolute;
+  top: 450px;
+  left: 500px;
+  width: 400px;
   height: 68px;
   margin: 18px 0 0 18px;
 }
@@ -459,10 +464,21 @@ img {
   border-bottom: 1px solid black;
 }
 .detail_right .bottom_box .join {
-  width: 180px;
+  width: 120px;
   height: 68px;
   background: orange;
-  float: right;
+  margin-left: 20px;
+  float: left;
+  text-align: center;
+  line-height: 68px;
+  color: #fff;
+  cursor: pointer;
+}
+.detail_right .bottom_box .join_in {
+  width: 120px;
+  height: 68px;
+  background: #ff3c00;
+  float: left;
   text-align: center;
   line-height: 68px;
   color: #fff;

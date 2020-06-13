@@ -335,9 +335,7 @@ img {
 }
 #cart .cart .middle_part {
   width: 1200px;
-  height: 600px;
   margin: 20px 0;
-  background: pink;
 }
 
 .topcontent {
@@ -363,17 +361,17 @@ img {
 .topcontent span:nth-of-type(4) {
   width: 80px;
   height: 60px;
-  margin-left: 60px;
+  margin-left: 86px;
 }
 .topcontent span:nth-of-type(5) {
   width: 80px;
   height: 60px;
-  margin-left: 60px;
+  margin-left: 36px;
 }
 .topcontent span:nth-of-type(6) {
   width: 80px;
   height: 60px;
-  margin-left: 60px;
+  margin-left: 80px;
 }
 
 .bottomcontent {
@@ -389,9 +387,9 @@ img {
   cursor: pointer;
 }
 .bottomcontent span:nth-of-type(2) {
-  width: 120px;
+  width: 140px;
   height: 60px;
-  margin-left: 610px;
+  margin-left: 510px;
 }
 .bottomcontent span:nth-of-type(2) em {
   font-style: normal;
@@ -420,11 +418,15 @@ img {
   justify-content: flex-start;
   align-items: center;
 }
+.goods .inputchoose {
+  float: left;
+  margin-top: 60px;
+}
 .goods .part1 {
-  display: inline-block;
+  float: left;
   width: 450px;
   height: 120px;
-  margin-left: 20px;
+  margin: 10px 0 0 20px;
 }
 .goods .part1 .leftpart {
   width: 120px;
@@ -456,19 +458,20 @@ img {
   padding: 2px;
 }
 .goods span {
+  float: left;
   width: 90px;
   height: 60px;
-  margin-left: 145px;
+  margin: 40px 0 0 145px;
   text-align: center;
   line-height: 60px;
 }
 .goods .number {
-  display: inline-block;
+  float: left;
   width: 100px;
   height: 30px;
   box-sizing: border-box;
   border: 1px solid black;
-  margin-left: 50px;
+  margin: 50px 0 0 50px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
