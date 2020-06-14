@@ -1,9 +1,14 @@
 !function($){
+    const header=$('header');
+    header.load('./common.html');
+    const footer=$('footer');
+    footer.load('./footer.html');
+
     let $sid=location.search.substring(1).split('=')[1];
 
     const $topdet_pic=$('.topdet_pic');//左框
-    const $bpic=$('.bpic');//右图
-    const $spic=$('.spic');//左图
+    const $bpic=$('.bpic');//大图
+    const $spic=$('.spic');//中图
 
     if(!$sid){  //如果$sid不存在，默认$sid = 1
         $sid=1;
@@ -15,15 +20,16 @@
         data:{sid:$sid},
         dataType:'json'
     }).done(function(d){
-        console.log(d);
+        // console.log(d);
         $spic.attr('src',d.url);//左图添加src
         $spic.attr('sid',d.sid);
         $bpic.attr('src',d.url);
-        console.log(d.piclisturl.split(','));//一组小图
+        // console.log(d.piclisturl.split(','));//一组小图
         //渲染一组小图
         let picarr=d.piclisturl.split(',');
         let $strhtml='';
         $.each(picarr,function(index,value){
+            // console.log(index);
             $strhtml+='<li><img src="'+value+'"></li>';
         });
         $('.botdet_pic ul').html($strhtml);
@@ -34,7 +40,7 @@
     const $fdj=$('.fdj');//小放
     const $jz=$('.jz');//大放
 
-    //小放/大放=小图/大图
+    //中放/大放=中图/大图
     $fdj.width($spic.width() * $jz.width() / $bpic.width());
     $fdj.height($spic.height() * $jz.height() / $bpic.height());
     let $bili = $bpic.width() / $spic.width();
@@ -72,15 +78,74 @@
         $jz.css('visibility', 'hidden');
     });
   
+
+// 小图切换利用事件委托
+$('.smallpic').on('click','li',function(){
+    let $imgurl = $(this).find('img').attr('src');
+    $spic.attr('src',$imgurl);//小图地址赋值给中图
+    $bpic.attr('src',$imgurl);//小图地址赋值给大图
+})
+
+const $right=$('.rightarrow');
+const $left=$('.leftarrow');
+//左右箭头事件
+let $num = 5; //列表显示的图片个数
+$right.on('click', function() {
+    const $lists = $('.smallpic').children();
+    // console.log($lists.length);
+    if ($lists.length > $num) { //限制点击的条件
+        $num++;
+        $left.css('color', '#333');
+        if ($lists.length == $num) {
+            $right.css('color', '#fff');
+        }
+        $('.smallpic').animate({
+            left: -($num - 5) * $lists.eq(0).outerWidth(true)
+        });
+    }
+});
+$left.on('click', function() {
+    const $lists = $('.smallpic').children();
+    if ($num > 5) { //限制点击的条件
+        $num--;
+        $right.css('color', '#333');
+        if ($num <=5) {
+            $left.css('color', '#fff');
+        }
+        $('.smallpic').animate({
+            left: -($num - 5) * $lists.eq(0).outerWidth(true)
+        });
+    }
+});
+
+
+// 数量加加减减
+$('.amount_right span').eq(0).on('click',function(){
+    let $amount=$('#count').val();
+    $amount++;
+    $('#count').val($amount);
+    cookietoarray();
+    let $sid=$('.spic').attr('sid');
+    arrnum[$.inArray($sid,arrsid)]=$('#count').val();
+})
+$('.amount_right span').eq(1).on('click',function(){
+    let $amount=$('#count').val();
+    $amount--;
+    $('#count').val($amount);
+    cookietoarray();
+    let $sid=$('.spic').attr('sid');
+    arrnum[$.inArray($sid,arrsid)]=$('#count').val();
+})
     
+
     // 购物车
     let arrsid = []; //存储商品的编号
-    let arrnum = []; //存储商品的数量
+    let arrnum = []; 
 
     function cookietoarray() {
         if ($.cookie('cookiesid') && $.cookie('cookienum')) {
-            arrsid = $.cookie('cookiesid').split(','); //获取cookie 同时转换成数组。[1,2,3,4]
-            arrnum = $.cookie('cookienum').split(','); //获取cookie 同时转换成数组。[12,13,14,15]
+            arrsid = $.cookie('cookiesid').split(','); 
+            arrnum = $.cookie('cookienum').split(','); 
         } else {
             arrsid = [];
             arrnum = [];
@@ -103,5 +168,15 @@
         }
         alert('确定加入购物车？');
     });
+
+
+// $('join').on('click',function(){
+//     if(!localStorage.getItem('username')){
+//         alert('先登录')
+//         arrnum[$.inArray($sid,arrsid)]=$('#count').val(0);
+//     }
+// })
+
+
 
 }(jQuery);

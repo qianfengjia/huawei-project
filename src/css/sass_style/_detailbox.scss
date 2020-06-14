@@ -41,33 +41,41 @@
             display: block;
             }
     }
+    .leftarrow{
+        font-size: 20px;
+        color: red;
+        cursor: pointer;
+        float: left;
+        position: absolute;
+        top:61%;left: 10px;
+        z-index: 999;
+    }
+    .rightarrow{
+        font-size: 20px;
+        color: red;
+        cursor: pointer;
+        float: left;
+        position: absolute;
+        top:61%;right:63%;
+        z-index: 999;
+    }
     .botdet_pic{
+        width: 450px;
         height: 68px;
-        background: rosybrown;
         position: relative;
         overflow: hidden;
         margin-top: 20px;
-        a{
-            font-size: 20px;
-            color: red;
-            cursor: pointer;
-            float: left;
-            position: absolute;
-            top:30%;
-        }
-        .leftarrow{left: 10px;}
-        .rightarrow{right: 10px;}
+        margin-left: 3px;
         ul{
             float: left;
             position: absolute;
-            width: 400px;
+            width: 900px;
             height: 68px;
-            top: 0;left:30px;
+            top: 0;left:10px;
             li{
                 width: 70px;
                 height: 68px;
-                margin-right: 10px;
-                background: palegreen;
+                margin-right: 20px;
                 float: left;
             }
         }
@@ -109,7 +117,7 @@
                 width: 40px;
                 height: 68px;
                 float: left;
-                background: palegoldenrod;
+                // background: palegoldenrod;
                 input{width: 38px;height: 66px;outline: none;border: 0;text-align: center;}
             }
             .amount_right{
@@ -119,6 +127,7 @@
                 span{width: 26px;
                     height: 32px;
                     font-size: 20px;
+                    border-left: 1px solid black;
                     cursor: pointer;
                     display: flex;
                     flex-direction: row;
@@ -132,6 +141,7 @@
                     justify-content: center;
                     align-items: center;
                     border-bottom: 1px solid black;
+                    // border-left: 1px solid black;
                 }
             }
         }

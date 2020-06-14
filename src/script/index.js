@@ -1,4 +1,31 @@
 
+!function(){
+	const header=$('header');
+	header.load('./common.html');
+	const footer=$('footer');
+	footer.load('./footer.html');
+
+// 根据本地存储，显示用户信息
+if (localStorage.getItem('username')) {
+	$('.xingming').html(localStorage.getItem('username'));
+	$('.xingming').show();
+	$('.messagebox').hide();
+}else{
+	$('.xingming').hide();
+	$('.backout').hide();
+	$('.messagebox').show();
+}
+
+$('.backout').on('click', function() {
+	$('.messagebox').show();
+	$('.xingming').hide();
+	$('.backout').hide();
+	localStorage.removeItem('username');
+});
+
+}();
+
+
 // 第一个大轮播图淡入淡出效果
 !function(){
 	class biglunbo{

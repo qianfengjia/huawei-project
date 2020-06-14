@@ -1,4 +1,10 @@
+
+
 ! function($) {
+    const header=$('header');
+    header.load('./common.html');
+    const footer=$('footer');
+    footer.load('./footer.html');
 
     let array_default = []; //排序前的li数组
     let array = []; //排序中的数组
@@ -12,15 +18,8 @@
         url: 'http://10.31.162.26/huawei-project/php/listdata.php', //默认获取后端接口的10条
         dataType: 'json'
     }).done(function(data) {
-        console.log(data);
-        
+        // console.log(data);  
         let $strhtml = '<ul>';
-        //渲染数据
-        // http://www.jq22.com/jquery-info390
-        // 	1.将图片路径写入data-original属性
-        // 	2.给lazyload的图片增加一个名为lazy的class
-        // 	3.选择所有要lazyload的图片（img.lazy），执行lazyload();
-        // 	4.图片的尺寸需要约定。
         $.each(data, function(index, value) {
             $strhtml += `
                 <li>
@@ -53,7 +52,6 @@
     //渲染的外部无法获取内部的元素对象，通过事件委托实现。
 
     //2.分页思路
-    //告知后端当前请求的是第几页数据。将当前的页面页码传递给后端(get和page)
     $('.page').pagination({
         pageCount: 3, //总的页数
         jump: true, //是否开启跳转到指定的页数，布尔值。
@@ -124,12 +122,7 @@
                 }
             }
         }
-        //清空原来的列表，将排序后的数据添加上去。
-        //empty() : 删除匹配的元素集合中所有的子节点。
-        // $('.list ul').empty();//清空原来的列表
-        //这里能够省略empty
-        //append在追加的时候，如果追加的是jquery的元素对象，而jquery元素对象在你追加的元素中存在，直接取出存在的元素，从后面追加。
-        //如果追加的是内容结构，依然和appendChild一样，后面继续追加。
+      
         $.each(array, function(index, value) {
             console.log(value); //n.fn.init [li, context: li]
             $('.part ul').append(value);
@@ -150,8 +143,6 @@
                 }
             }
         }
-        //清空原来的列表，将排序后的数据添加上去。
-        //empty() : 删除匹配的元素集合中所有的子节点。
         // $('.list ul').empty();//清空原来的列表
         $.each(array, function(index, value) {
             $('.part ul').append(value);

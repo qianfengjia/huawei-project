@@ -146,10 +146,4 @@ $form.on('submit',function(){
     }
 });
 
-
-
-
-
-
-
 }(jQuery);

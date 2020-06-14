@@ -274,7 +274,14 @@ $w:200px;
             float: left;
             .news{
                 width: 100%;
-                height: 44px;
+                height: 32px;
+                color: #333;
+                padding-top: 12px;
+                padding-left: 20px;
+                .huodong{
+                    font-size: 14px;
+                    color: #666;
+                }
             }
             .newsdown{
                 width: 100%;

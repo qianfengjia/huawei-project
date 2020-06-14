@@ -1,6 +1,9 @@
 !function($){
-    // const header=$('header')
-    // header.load('./')
+    const header=$('header');
+    header.load('./common.html');
+    const footer=$('footer');
+    footer.load('./footer.html');
+
     function showlist(sid,num){
         $.ajax({
             url:'http://10.31.162.26/huawei-project/php/alldata.php',

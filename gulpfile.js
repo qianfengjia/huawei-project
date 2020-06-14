@@ -32,8 +32,8 @@ gulp.task('plugins', () => {
 });
 //2. iconfont
 gulp.task('font', () => {
-    return gulp.src('src/font/*')
-        .pipe(gulp.dest('dist/font'));
+    return gulp.src('src/css/iconfont/*')
+        .pipe(gulp.dest('dist/css/iconfont'));
 });
 
 //3.压缩html文件 - 引入插件包
@@ -45,7 +45,7 @@ gulp.task('uglifyhtml', () => {
 
 //4.压缩公共css文件 - 
 gulp.task('uglifycss', () => {
-    return gulp.src('src/css/*.css')
+    return gulp.src('src/css/css/*.css')
         .pipe(css()) //执行css插件包
         .pipe(gulp.dest('dist/css/css'));
 });
